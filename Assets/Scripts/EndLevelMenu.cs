@@ -35,7 +35,6 @@ public class EndLevelMenu : MonoBehaviour
 
     public void OnClickReplay()
     {
-        Debug.Log($"CVS");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gameState.HealthChanged -= CheckIfLose;
         gameState.LevelEnded -= LevelPassed;
