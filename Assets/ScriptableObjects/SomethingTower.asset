@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerPrefab: {fileID: 5529033705220714280, guid: 1993c4dec187dec43a8c53faf02a5a11,
     type: 3}
+  projectile: {fileID: 11400000, guid: 126f6092a88cf144aaf55f99110e3eea, type: 2}
   shootInterval: 0.5
   range: 4
   damage: 1

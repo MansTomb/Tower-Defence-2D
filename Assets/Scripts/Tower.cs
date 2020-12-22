@@ -31,13 +31,14 @@ public class Tower : MonoBehaviour
         {
             var enemyClosestToCastle = _EnemiesInRadius.First();
             ShootAt(enemyClosestToCastle);
-            _ShootDelay += towerSettings.shootInterval;
+            _ShootDelay = Time.fixedTime + towerSettings.shootInterval;
         }
     }
 
     private void ShootAt(Enemy enemy)
     {
-        enemy.ApplyDamage(towerSettings.damage);
+        var projectile = Instantiate(towerSettings.projectile.projectilePrefab, transform.position, Quaternion.identity);
+        projectile.GetComponent<Projectile>().Initialize(enemy.gameObject, towerSettings.damage, towerSettings.projectile);
     }
 
     private bool CanAttack()

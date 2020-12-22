@@ -5,6 +5,8 @@ public class TowerSO : ScriptableObject
 {
     public GameObject towerPrefab;
 
+    public ProjectileSO projectile;
+
     public float shootInterval;
     public float range;
     public float damage;
