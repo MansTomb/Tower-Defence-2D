@@ -17,4 +17,5 @@ MonoBehaviour:
   health: 10
   speed: 3
   damage: 2
-  coinsOnDie: 10
+  coinsOnDieLowerBound: 5
+  coinsOnDieUpperBound: 10

@@ -29,19 +29,19 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Waypoints.cs" />
         <option value="$PROJECT_DIR$/Assets/Serialize Dictionary/SerializableDictionaryLite/Editor/DictionaryPropertyDrawer.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Code/WaveSO.cs" />
-        <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Code/EnemySO.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Finish.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Code/LevelSO.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameStatePresenter.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Code/TowerSO.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tower.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TowerPricePresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/InputReader.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BuildMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Code/EnemySO.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tower.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TowerMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BuildMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InputReader.cs" />
       </list>
     </option>
   </component>
@@ -86,7 +86,7 @@
       <updated>1608542541965</updated>
       <workItem from="1608542549824" duration="3979000" />
       <workItem from="1608551782656" duration="17231000" />
-      <workItem from="1608630122761" duration="8048000" />
+      <workItem from="1608630122761" duration="9527000" />
     </task>
     <servers />
   </component>
@@ -103,9 +103,9 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2381" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608542783272" />
-    <state x="2536" y="240" key="run.anything.popup" timestamp="1608634411228">
+    <state x="2536" y="240" key="run.anything.popup" timestamp="1608639547593">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2536" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608634411228" />
+    <state x="2536" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608639547593" />
   </component>
 </project>

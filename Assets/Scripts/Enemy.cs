@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class Enemy : MonoBehaviour
         Health = enemySettings.health;
         _Speed = enemySettings.speed;
         Damage = enemySettings.damage;
-        CoinsOnDie = enemySettings.coinsOnDie;
+        CoinsOnDie = Random.Range(enemySettings.coinsOnDieLowerBound, enemySettings.coinsOnDieUpperBound);
 
         healthBar.fillAmount = 1;
         

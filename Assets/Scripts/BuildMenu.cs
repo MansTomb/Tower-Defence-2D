@@ -14,6 +14,12 @@ public class BuildMenu : MonoBehaviour
     
     private void Open(GameObject buildPlace)
     {
+        if (buildPlace == null)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+
         if (buildPlace.CompareTag("Build Place") == false || buildPlace.transform.childCount >= 1)
             return;
         

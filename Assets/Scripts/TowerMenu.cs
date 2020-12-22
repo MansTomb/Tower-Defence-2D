@@ -14,9 +14,15 @@ public class TowerMenu : MonoBehaviour
     
     private void Open(GameObject obj)
     {
+        if (obj == null)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+
         if (ObjectIsTower(obj) == false && ObjectIsBuildPlaceAndDontHaveTower(obj) == false)
             return;
-        
+
         if (obj.transform.childCount == 1)
             target = obj.transform.GetChild(0).gameObject;
         else

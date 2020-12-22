@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    [SerializeField] private TowerSO towerSettings;
+    [SerializeField] private TowerSO towerSettings = null;
 
     private List<Enemy> _EnemiesInRadius = new List<Enemy>();
     private float _ShootDelay = 0;
@@ -48,9 +48,7 @@ public class Tower : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
-        {
             _EnemiesInRadius.Add(other.gameObject.GetComponent<Enemy>());
-        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
