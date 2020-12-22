@@ -8,7 +8,9 @@ public class GameStateController : MonoBehaviour
     [SerializeField] private Finish finish = null;
 
     private float _DelayBetweenWaves;
-    
+    private int _EnemiesInLevel;
+    private int _EnemiesDestroyedOrKilled = 0;
+
     public int Health { get; private set; }
     public int Coins { get; private set; }
     public int WavesAmount { get; private set; }
@@ -17,6 +19,7 @@ public class GameStateController : MonoBehaviour
     public event Action<int> CoinsChanged;
     public event Action<int> HealthChanged;
     public event Action<int> CurrentWaveChanged;
+    public event Action LevelEnded;
     
     private void RegisterToEnemyDied(GameObject enemy) => enemy.GetComponent<Enemy>().OnDied += EnemyDied;
     
@@ -25,6 +28,7 @@ public class GameStateController : MonoBehaviour
         Coins = level.startCoins;
         Health = level.health;
         WavesAmount = level.waves.Count;
+        _EnemiesInLevel = level.TotalAmountOfMobs();
         CurrentWave = 1;
         _DelayBetweenWaves = Time.fixedTime + level.DelayBetweenWaves;
     }
@@ -50,10 +54,6 @@ public class GameStateController : MonoBehaviour
     {
         finish.OnEnemyFinished += EnemyFinished;
         spawner.OnSpawn += RegisterToEnemyDied;
-        
-        CoinsChanged?.Invoke(Coins);
-        HealthChanged?.Invoke(Health);
-        CurrentWaveChanged?.Invoke(CurrentWave);
     }
 
     private void OnDisable()
@@ -61,12 +61,13 @@ public class GameStateController : MonoBehaviour
         finish.OnEnemyFinished -= EnemyFinished;
         spawner.OnSpawn -= RegisterToEnemyDied;
     }
-
+    
     private void EnemyDied(Enemy enemy)
     {
         Coins += enemy.CoinsOnDie;
         enemy.OnDied -= EnemyDied;
         CoinsChanged?.Invoke(Coins);
+        CheckIfLastEnemyDiedOrFinished();
     }
 
     private void EnemyFinished(GameObject enemy)
@@ -75,8 +76,18 @@ public class GameStateController : MonoBehaviour
         
         Health -= enemyComp.Damage;
         HealthChanged?.Invoke(Health);
-        
         enemyComp.OnDied -= EnemyDied;
+        
+        CheckIfLastEnemyDiedOrFinished();
+    }
+
+    private void CheckIfLastEnemyDiedOrFinished()
+    {
+        _EnemiesDestroyedOrKilled++;
+        if (_EnemiesDestroyedOrKilled == _EnemiesInLevel)
+        {
+            LevelEnded?.Invoke();
+        }
     }
 
     public bool TryBuy(int cost)

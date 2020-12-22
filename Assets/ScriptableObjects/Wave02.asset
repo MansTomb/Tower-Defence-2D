@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5003dec88d6c867469ccc63b33f8603f, type: 3}
-  m_Name: Wave00
+  m_Name: Wave02
   m_EditorClassIdentifier: 
   waveSettings:
     reorderableList:
@@ -39,6 +39,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 3bd42f36ab69c8e4d8a3125b4c4dc6f7, type: 2}
     _keys:
     - {fileID: 11400000, guid: 3bd42f36ab69c8e4d8a3125b4c4dc6f7, type: 2}
-    _values: 05000000
+    _values: 0f000000
   delayBetweenSpawn: 1
   waveDuration: 10

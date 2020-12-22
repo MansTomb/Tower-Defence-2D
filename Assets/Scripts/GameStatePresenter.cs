@@ -14,6 +14,10 @@ public class GameStatePresenter : MonoBehaviour
         gameState.CoinsChanged += OnCoinsChanged;
         gameState.CurrentWaveChanged += OnWaveChanged;
         gameState.HealthChanged += OnHealthChanged;
+        
+        OnHealthChanged(gameState.Health);
+        OnCoinsChanged(gameState.Coins);
+        OnWaveChanged(gameState.CurrentWave);
     }
 
     private void OnDisable()

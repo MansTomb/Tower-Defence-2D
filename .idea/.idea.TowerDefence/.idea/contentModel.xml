@@ -18,6 +18,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="BuildMenu.cs" t="Include" />
+          <e p="EndLevelMenu.cs" t="Include" />
           <e p="Enemy.cs" t="Include" />
           <e p="Finish.cs" t="Include" />
           <e p="GameStateController.cs" t="Include" />

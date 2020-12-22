@@ -5,21 +5,21 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    private List<Coroutine> _ListOfGoingWaves = new List<Coroutine>();
+    private List<Coroutine> _GoingWaves = new List<Coroutine>();
 
     public event Action<GameObject> OnSpawn;
 
     private void OnDisable()
     {
-        foreach (var wave in _ListOfGoingWaves)
+        foreach (var wave in _GoingWaves)
         {
             StopCoroutine(wave);
         }
     }
-    
+
     public void SpawnWave(WaveSO wave)
     {
-        _ListOfGoingWaves.Add(StartCoroutine(Spawn(wave)));
+        _GoingWaves.Add(StartCoroutine(Spawn(wave)));
     }
 
     private IEnumerator Spawn(WaveSO wave)

@@ -9,4 +9,19 @@ public class LevelSO : ScriptableObject
     public float DelayBetweenWaves;
 
     public List<WaveSO> waves;
+
+    public int TotalAmountOfMobs()
+    {
+        int amount = 0;
+
+        foreach (var wave in waves)
+        {
+            foreach (var waveSetting in wave.waveSettings)
+            {
+                amount += waveSetting.Value;
+            }
+        }
+
+        return amount;
+    }
 }
