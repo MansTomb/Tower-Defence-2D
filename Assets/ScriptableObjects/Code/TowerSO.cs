@@ -9,5 +9,5 @@ public class TowerSO : ScriptableObject
     public float range;
     public float damage;
 
-    public float buildPrice;
+    public int buildPrice;
 }

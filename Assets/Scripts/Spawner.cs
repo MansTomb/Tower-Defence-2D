@@ -1,30 +1,38 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private LevelSO level = null;
-    
-    private void Awake()
+    private List<Coroutine> _ListOfGoingWaves = new List<Coroutine>();
+
+    public event Action<GameObject> OnSpawn;
+
+    private void OnDisable()
     {
-        StartCoroutine(SpawnWave());
+        foreach (var wave in _ListOfGoingWaves)
+        {
+            StopCoroutine(wave);
+        }
+    }
+    
+    public void SpawnWave(WaveSO wave)
+    {
+        _ListOfGoingWaves.Add(StartCoroutine(Spawn(wave)));
     }
 
-    private IEnumerator SpawnWave()
+    private IEnumerator Spawn(WaveSO wave)
     {
-        var currentWave = level.waves[GetCurrentWave()];
-        foreach (var enemy in currentWave.waveSettings)
+        foreach (var enemy in wave.waveSettings)
         {
             for (int i = 0; i < enemy.Value; i++)
             {
-                yield return new WaitForSeconds(currentWave.delayBetweenSpawn);
-                Instantiate(enemy.Key.enemyPrefab).transform.position = transform.position;   
+                yield return new WaitForSeconds(wave.delayBetweenSpawn);
+                var obj = Instantiate(enemy.Key.enemyPrefab);
+                obj.transform.position = transform.position;
+                OnSpawn?.Invoke(obj);
             }
         }
-    }
-
-    private int GetCurrentWave()
-    {
-        return 0;
     }
 }

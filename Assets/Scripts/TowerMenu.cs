@@ -3,6 +3,7 @@
 public class TowerMenu : MonoBehaviour
 {
     [SerializeField] private InputReader input = null;
+    [SerializeField] private GameStateController gameState = null;
     [HideInInspector] public GameObject target = null;
 
     private void Awake()
@@ -11,18 +12,26 @@ public class TowerMenu : MonoBehaviour
         gameObject.SetActive(false);
     }
     
-    private void Open(GameObject tower)
+    private void Open(GameObject obj)
     {
-        if (tower.CompareTag("Tower") == false)
+        if (ObjectIsTower(obj) == false && ObjectIsBuildPlaceAndDontHaveTower(obj) == false)
             return;
-        target = tower;
+        
+        if (obj.transform.childCount == 1)
+            target = obj.transform.GetChild(0).gameObject;
+        else
+            target = obj;
+        
         gameObject.SetActive(true);
         transform.position = target.transform.position;
     }
-    
+
+    private bool ObjectIsTower(GameObject obj) => obj.CompareTag("Tower");
+    private bool ObjectIsBuildPlaceAndDontHaveTower(GameObject obj) => obj.transform.childCount >= 1 && obj.CompareTag("Build Place");
+
     public void OnTowerSell()
     {
-        Debug.Log($"sell");
+        gameState.Sell(target.GetComponent<Tower>().SellPrice());
         Destroy(target);
         gameObject.SetActive(false);
     }

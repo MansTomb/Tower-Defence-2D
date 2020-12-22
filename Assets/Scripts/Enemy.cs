@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
@@ -6,22 +7,21 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemySO enemySettings = null;
     [SerializeField] public Image healthBar = null;
 
-    private float _Health;
     private float _Speed;
-    private int _Damage;
+    private int _WaypointIndex = 0;
     private Transform _Target;
 
-    public float health => _Health;
-    public int damage => _Damage;
-    
-    
-    private int _WaypointIndex = 0;
-    
+    public float Health { get; private set; }
+    public int Damage { get; private set; }
+    public int CoinsOnDie { get; private set; }
+
+    public event Action<Enemy> OnDied;
     void Start()
     {
-        _Health = enemySettings.health;
+        Health = enemySettings.health;
         _Speed = enemySettings.speed;
-        _Damage = enemySettings.damage;
+        Damage = enemySettings.damage;
+        CoinsOnDie = enemySettings.coinsOnDie;
 
         healthBar.fillAmount = 1;
         
@@ -41,10 +41,13 @@ public class Enemy : MonoBehaviour
 
     public void ApplyDamage(float dmg)
     {
-        _Health -= dmg;
-        healthBar.fillAmount = _Health / enemySettings.health;
-        if (_Health <= 0)
+        Health -= dmg;
+        healthBar.fillAmount = Health / enemySettings.health;
+        if (Health <= 0)
+        {
+            OnDied?.Invoke(this);
             Destroy(gameObject);
+        }
     }
 
     private void GetNextWaypoint()

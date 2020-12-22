@@ -3,6 +3,7 @@
 public class BuildMenu : MonoBehaviour
 {
     [SerializeField] private InputReader input = null;
+    [SerializeField] private GameStateController gameState = null;
     [HideInInspector] public GameObject target = null;
 
     private void Awake()
@@ -13,7 +14,7 @@ public class BuildMenu : MonoBehaviour
     
     private void Open(GameObject buildPlace)
     {
-        if (buildPlace.CompareTag("Build Place") == false)
+        if (buildPlace.CompareTag("Build Place") == false || buildPlace.transform.childCount >= 1)
             return;
         
         target = buildPlace;
@@ -23,8 +24,10 @@ public class BuildMenu : MonoBehaviour
     
     public void OnTowerCreate(TowerSO prefab)
     {
-        Debug.Log($"creation");
-        Instantiate(prefab.towerPrefab, target.transform, false);
-        gameObject.SetActive(false);
+        if (gameState.TryBuy(prefab.buildPrice))
+        {
+            Instantiate(prefab.towerPrefab, target.transform, false);
+            gameObject.SetActive(false);
+        }
     }
 }

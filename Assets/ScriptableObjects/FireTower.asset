@@ -17,4 +17,4 @@ MonoBehaviour:
   shootInterval: 1.5
   range: 5
   damage: 5
-  buildPrice: 20
+  buildPrice: 10

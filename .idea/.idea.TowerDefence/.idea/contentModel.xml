@@ -19,10 +19,13 @@
           <e p="BuildMenu.cs" t="Include" />
           <e p="Enemy.cs" t="Include" />
           <e p="Finish.cs" t="Include" />
+          <e p="GameStateController.cs" t="Include" />
+          <e p="GameStatePresenter.cs" t="Include" />
           <e p="InputReader.cs" t="Include" />
           <e p="Spawner.cs" t="Include" />
           <e p="Tower.cs" t="Include" />
           <e p="TowerMenu.cs" t="Include" />
+          <e p="TowerPricePresenter.cs" t="Include" />
           <e p="Waypoints.cs" t="Include" />
         </e>
         <e p="Serialize Dictionary" t="Include">

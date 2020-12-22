@@ -9,6 +9,8 @@ public class Tower : MonoBehaviour
     private List<Enemy> _EnemiesInRadius = new List<Enemy>();
     private float _ShootDelay = 0;
 
+    public int SellPrice() => towerSettings.buildPrice;
+    
     private void Awake()
     {
         _ShootDelay = Time.fixedTime + towerSettings.shootInterval;
