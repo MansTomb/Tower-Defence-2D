@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class BuildMenu : MonoBehaviour
 {
@@ -11,7 +12,12 @@ public class BuildMenu : MonoBehaviour
         input.OnTouch += Open;
         gameObject.SetActive(false);
     }
-    
+
+    private void OnDestroy()
+    {
+        input.OnTouch -= Open;
+    }
+
     private void Open(GameObject buildPlace)
     {
         if (buildPlace == null)

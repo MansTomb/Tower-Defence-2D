@@ -1,25 +1,14 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    private List<Coroutine> _GoingWaves = new List<Coroutine>();
-
     public event Action<GameObject> OnSpawn;
-
-    private void OnDisable()
-    {
-        foreach (var wave in _GoingWaves)
-        {
-            StopCoroutine(wave);
-        }
-    }
 
     public void SpawnWave(WaveSO wave)
     {
-        _GoingWaves.Add(StartCoroutine(Spawn(wave)));
+        StartCoroutine(Spawn(wave));
     }
 
     private IEnumerator Spawn(WaveSO wave)

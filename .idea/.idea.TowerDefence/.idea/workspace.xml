@@ -36,18 +36,19 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/TowerPricePresenter.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Code/EnemySO.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TowerMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BuildMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InputReader.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Code/TowerSO.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tower.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Code/ProjectileSO.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Projectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameStatePresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Code/LevelSO.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BuildMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EndLevelMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Projectile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -92,7 +93,8 @@
       <updated>1608542541965</updated>
       <workItem from="1608542549824" duration="3979000" />
       <workItem from="1608551782656" duration="17231000" />
-      <workItem from="1608630122761" duration="16285000" />
+      <workItem from="1608630122761" duration="16885000" />
+      <workItem from="1608716217394" duration="1342000" />
     </task>
     <servers />
   </component>
@@ -113,9 +115,9 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2536" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608639547593" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1608640857320">
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1608716266143">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608640857320" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608716266143" />
   </component>
 </project>

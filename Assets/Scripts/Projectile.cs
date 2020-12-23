@@ -1,11 +1,10 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     [HideInInspector] public ProjectileSO projectileSettings = null;
-    [HideInInspector] public float damage;
     [HideInInspector] public GameObject target = null;
+    [HideInInspector] public float damage;
 
     private bool _TargetSetted = false;
 

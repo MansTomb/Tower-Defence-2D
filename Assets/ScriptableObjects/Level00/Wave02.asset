@@ -36,9 +36,9 @@ MonoBehaviour:
     reqReferences: {fileID: 11400000, guid: 3d6785e46e940b843aa5fbe4ca729d60, type: 2}
     isExpanded: 1
     _keyValues:
-    - {fileID: 11400000, guid: 3bd42f36ab69c8e4d8a3125b4c4dc6f7, type: 2}
+    - {fileID: 11400000, guid: 7a4b8898b34871e459b5fb0cef16a3dc, type: 2}
     _keys:
-    - {fileID: 11400000, guid: 3bd42f36ab69c8e4d8a3125b4c4dc6f7, type: 2}
-    _values: 0f000000
+    - {fileID: 11400000, guid: 7a4b8898b34871e459b5fb0cef16a3dc, type: 2}
+    _values: 0a000000
   delayBetweenSpawn: 1
   waveDuration: 10

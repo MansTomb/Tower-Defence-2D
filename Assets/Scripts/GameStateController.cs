@@ -22,6 +22,8 @@ public class GameStateController : MonoBehaviour
     public event Action LevelEnded;
     
     private void RegisterToEnemyDied(GameObject enemy) => enemy.GetComponent<Enemy>().OnDied += EnemyDied;
+    public static void PauseGame() => Time.timeScale = 0;
+    public static void UnpauseGame() => Time.timeScale = 1;
     
     private void Awake()
     {
@@ -39,7 +41,7 @@ public class GameStateController : MonoBehaviour
         {
             return;
         }
-        else if (Time.fixedTime >= _DelayBetweenWaves)
+        if (Time.fixedTime >= _DelayBetweenWaves)
         {
             var wave = level.waves[CurrentWave - 1];
             spawner.SpawnWave(wave);

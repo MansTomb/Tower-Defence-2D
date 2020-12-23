@@ -20,7 +20,7 @@ public class EndLevelMenu : MonoBehaviour
     {
         if (amount <= 0)
         {
-            Time.timeScale = 0;
+            GameStateController.PauseGame();
             gameObject.SetActive(true);
             text.SetText("You lose!");
         }
@@ -28,7 +28,7 @@ public class EndLevelMenu : MonoBehaviour
 
     private void LevelPassed()
     {
-        Time.timeScale = 0;
+        GameStateController.PauseGame();
         gameObject.SetActive(true);
         text.SetText("You win!");
     }
@@ -38,6 +38,6 @@ public class EndLevelMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gameState.HealthChanged -= CheckIfLose;
         gameState.LevelEnded -= LevelPassed;
-        Time.timeScale = 1;
+        GameStateController.UnpauseGame();
     }
 }
